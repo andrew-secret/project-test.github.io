@@ -1,0 +1,46 @@
+// ######################################################
+// Breakpoints
+// ######################################################
+
+$x-small: 400px !default;
+$small: 500px !default;
+$medium: 700px !default;
+$large: 990px !default;
+$x-large: 1200px !default;
+
+$breakpoints:
+    ( "x-small": $x-small
+    , "small": $small
+    , "medium": $medium
+    , "large": $large
+    , "x-large": $x-large
+    );
+
+    $retina: "only screen and (-webkit-min-device-pixel-ratio: 2),\a
+            only screen and (min--moz-device-pixel-ratio: 2),\a
+            only screen and (-o-min-device-pixel-ratio: 2/1),\a
+            only screen and (min-device-pixel-ratio: 2),\a
+            only screen and (min-resolution: 192dpi),\a
+            only screen and (min-resolution: 2dppx)";
+    $portrait: "only screen and (orientation: portrait)";
+    $landscape: "only screen and (orientation: landscape)";
+
+    $media-queries-min: ();
+    $media-queries-max: ();
+    $media-queries-misc:
+        ( "retina": $retina
+        , "portrait": $portrait
+        , "landscape": $landscape
+        );
+
+    @each $size, $width in $breakpoints {
+        $maxQ: "only screen and (max-width: #{$width + 1})";
+        $minQ: "only screen and (min-width: #{$width})";
+        $media-queries-min: map-merge($media-queries-min, ($size: $minQ));
+        $media-queries-max: map-merge($media-queries-max, ($size: $maxQ));
+    }
+
+    $media-queries:
+        ( min: $media-queries-min
+        , max: $media-queries-max
+        );

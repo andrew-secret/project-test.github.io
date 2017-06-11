@@ -1,0 +1,14 @@
+=respond($size, $type: "max")
+    @if map-has-key($media-queries-misc, $size)
+        @media #{map-get($media-queries-misc, $size)}
+            @content
+    @else
+        @if type-of($size) == "number" // Integer given
+            @media only screen and (#{$type}-width: #{strip-unit($size)}px)
+                @content
+        @else
+            $group: map-get($media-queries, $type)
+            $query: map-get($group, $size)
+            @if $query
+                @media #{$query}
+                    @content

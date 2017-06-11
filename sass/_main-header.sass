@@ -1,0 +1,106 @@
+// ######################################################
+// Main-header
+// ######################################################
+
+.drska-main-header
+    box-sizing: border-box
+    padding: rem(60)
+    padding-right: rem(100)
+    position: fixed
+    width: 100%
+    z-index: 3
+    top: 0
+    background-color: transparent
+    transition: padding 200ms ease-in-out,background-color 200ms ease-in-out
+
+.drska-main-header__left
+    float: left
+
+.drska-main-header__right
+    float: right
+
+    +respond("large")
+        float: none
+
+
+// ######################################################
+// Main-header – Image
+// ######################################################
+
+.drska-header
+    margin: 0 auto rem(150) auto
+    padding: rem(30) rem(70) 0 rem(30)
+
+.drska-header__image
+    background-size: cover
+    height: calc(100vh - 100px)
+    max-height: 1090px
+    position: relative
+
+    +respond("large")
+        height: 80vh
+
+    &::after
+        bottom: rem(-30)
+        content: ""
+        height: 70%
+        position: absolute
+        right: rem(-30)
+        width: 70%
+        z-index: -1
+        background-image: linear-gradient(60deg,#2c3739 15%,#535d5f 100%)
+        height: 80%
+
+
+// ######################################################
+// Main-header – Content
+// ######################################################
+
+.drska-header__content
+    box-sizing: border-box
+    left: 0
+    padding: 0 25% 60px 10%
+    position: absolute
+    top: 40%
+    width: 100%
+    z-index: 2
+    transform: translateY(0)
+
+    +respond("large")
+        top: 25%
+
+.drska-header-headline
+    max-width: rem(500)
+    padding: rem(20) 0
+
+    &:after
+        background: $dark
+        content: ""
+        height: 1px
+        position: absolute
+        top: rem(180)
+        left: 0
+        width: rem(300)
+
+        +respond("large")
+            display: none
+
+.drska-header-subtext
+    max-width: rem(400)
+
+// ######################################################
+// Main-header – scroll-transition
+// ######################################################
+
+.drska-main-header--background
+    background: rgba(white, 0.95)
+    padding: rem(15) rem(100) rem(15) rem(60)
+
+    .drska-main-header__left
+        svg
+            transition: transform 150ms ease-in-out
+            transform: scale(0.75)
+            transform-origin: bottom left
+
+    .drska-main-header__right
+        padding-top: rem(25)

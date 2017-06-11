@@ -1,0 +1,108 @@
+// ######################################################
+// Mixins
+// ######################################################
+
+=clearfix
+    clear: both
+
+    &:before,
+    &:after
+        content: ""
+        display: table
+
+    &:after
+        clear: both
+
+=hr($left: 0, $right: none, $top: 180, $width: 300)
+    &:after
+        background: $dark
+        content: ""
+        height: 1px
+        position: absolute
+        top: rem($top)
+        left: $left
+        right: $right
+        width: rem($width)
+
+=box-std($drop-shadow: none)
+    position: relative
+    width: 50%
+    padding: rem(100) rem(120)
+    box-sizing: border-box
+    box-shadow: $drop-shadow
+
+    +respond("large")
+        width: 90%
+        margin: rem(50) auto
+        padding: rem(70) rem(50)
+        float: none
+
+=primary-btn($bg-color: white, $bgHover: $accent, $color: $dark)
+    margin-right: rem(30)
+    background-color: $bg-color
+    border-color: black
+    padding: rem(15) rem(30)
+    font-size: rem(16)
+    font-family: $sans-serif-family
+    font-weight: $medium
+    letter-spacing: rem(0.7)
+    color: $color
+    position: relative
+    border-width: rem(3)
+    border-style: solid
+    border-color: $dark
+    cursor: pointer
+    display: inline-block
+    text-transform: uppercase
+
+    &:focus
+        outline: none
+
+    &:after
+        content: ""
+        position: absolute
+        width: 100%
+        height: calc(100% + 3px)
+        background-color: $bgHover
+        top: rem(6)
+        left: rem(12)
+        z-index: -1
+        transition: all 200ms ease-in
+
+    &:hover:after
+        top: 0
+        left: 0
+        height: 100%
+
+    &:focus:after
+        top: 0
+        left: 0
+        height: 100%
+
+=secondary-btn($color: $dark)
+    font-family: $sans-serif-family
+    font-size: rem(18)
+    font-weight: $medium
+    color: $color
+    letter-spacing: rem(1.4)
+    text-transform: uppercase
+    text-decoration: none
+    position: relative
+
+    &:after
+        content: ""
+        background-image: url(../img/secondary-btn-arrow.svg)
+        top: 3px
+        right: -40px
+        width: 24px
+        position: absolute
+        height: 10px
+
+    &:hover:after
+        content: ""
+        background-image: url(../img/secondary-btn-arrow.svg)
+        top: 3px
+        right: -45px
+        width: 24px
+        position: absolute
+        height: 10px

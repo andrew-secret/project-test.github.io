@@ -1,0 +1,83 @@
+// ######################################################
+// Content
+// ######################################################
+
+.drska-inner
+    max-width: rem(1170)
+    margin: 0 auto
+
+.drska-content
+    padding: rem(100) 0 0
+    width: rem(700)
+    margin: 0 auto
+    box-sizing: border-box
+    +clearfix
+
+    +respond("large")
+        width: 100%
+        padding: rem(30)
+
+    p
+        padding: 0 0 rem(50)
+        margin: 0
+        text-align: center
+
+// ######################################################
+// Content – content-box
+// ######################################################
+
+.drska-content-box
+    +box-std
+    float: left
+
+.drska-content-box__description
+    padding: rem(50) 0
+    margin: 0
+
+.drska-content-box__btn
+    +primary-btn
+    text-decoration: none
+    opacity: 1
+    margin-left: rem(-20)
+
+// ######################################################
+// Content – project-box
+// ######################################################
+
+.drska-project-box
+    +box-std($drop-shadow: $drop-shadow)
+    margin-top: -230px
+    background-color: $accent
+    float: right
+    z-index: 1
+    min-height: rem(600)
+
+    &:after
+        content: ""
+        background-image: url(../img/project-2.jpg)
+        background-size: cover
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        opacity: 0.03
+        z-index: -1
+
+.drska-project-box__description
+    padding-bottom: rem(90)
+
+.drska-project-box__btn
+    +secondary-btn
+
+// ######################################################
+// Content – hr
+// ######################################################
+
+hr
+    background-color: $dark
+    display: block
+    position: relative
+    border: 1px solid #f1f1f1
+    width: rem(200)
+    margin: rem(45) auto

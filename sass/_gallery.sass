@@ -1,0 +1,66 @@
+// ######################################################
+// Gallery
+// ######################################################
+
+.drska-gallery
+    max-width: rem(1170)
+    margin: 0 auto
+    padding: 0
+    padding-top: rem(170)
+    clear: both
+
+    ul
+        margin: 0
+        padding: 0
+
+    li
+        position: relative
+        width: 33.3%
+        float: left
+        list-style: none
+        margin: rem(-2) 0
+
+        +respond("large")
+            width: 100%
+            margin-bottom: rem(50)
+
+    img
+        width: 100%
+        height: auto
+
+.drska-gallery__caption
+    position: absolute
+    height: 100%
+    width: 100%
+    padding: rem(50)
+    box-sizing: border-box
+    background-color: $dark
+    top: 0
+    left: 0
+    opacity: 0
+    backface-visibility: hidden
+    transition: transform 300ms, opacity 300ms
+    z-index: 1
+
+    +respond("large")
+        opacity: 1
+        height: rem(115)
+        top: initial
+        bottom: 0
+
+    &:hover
+        transform: translate(15px, 15px)
+        opacity: 1
+
+.drska-gallery__text
+    font-family: $serif-family
+    color: white
+
+    +respond("large")
+        display: none
+
+.drska-gallery__link
+    +secondary-btn($color: white)
+
+    &:hover
+        color: $accent

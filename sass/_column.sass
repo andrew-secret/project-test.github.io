@@ -1,0 +1,39 @@
+// ######################################################
+// Column 4-8
+// ######################################################
+
+.drska-column
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+.drska-column-left,
+.drska-column-middle,
+.drska-column-right
+    width: 30%
+    float: left
+
+    li
+        list-style: none
+        font-family: $sans-serif-family
+        font-weight: 600
+        line-height: 1.7
+
+.drska-column-left__headline,
+.drska-column-middle__headline,
+.drska-column-right__headline
+    text-align: left
+    margin: 0
+
+.drska-column-left
+    padding-left: rem(50)
+
+.drska-column-left__headline
+    position: relative
+    padding-bottom: rem(80)
+    +hr($top: 100, $width: 100)
+
+.drska-column-middle,
+.drska-column-right
+    box-sizing: border-box
+    padding-left: rem(120)

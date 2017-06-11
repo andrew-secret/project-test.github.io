@@ -1,0 +1,86 @@
+.drska-form
+    background-color: $accent
+    padding-top: rem(150)
+
+.drska-form__headline
+    padding-bottom: rem(30)
+
+form
+    margin: 80px auto
+
+    label
+        position: relative
+        display: block
+
+    input,
+    textarea
+        font: 18px Helvetica, Arial, sans-serif
+        box-sizing: border-box
+        border: none
+        padding: 20px
+        width: 100%
+        margin-bottom: 20px
+        font-size: 18px
+        outline: none
+        transition: all 200ms ease-in-out
+
+        &::placeholder
+            transition: all 200ms ease-in-out
+            color: #B5B5B5
+            font-family: $sans-serif-family
+            font-size: rem(18)
+            display: inline-block
+            top: 0
+            position: absolute
+
+
+        &:focus, &.populated
+            padding-top: 28px
+            padding-bottom: 12px
+
+            &::placeholder
+                color: transparent
+
+            & + span
+                opacity: 1
+                top: 10px
+
+span
+    color: $dark
+    font-family: $sans-serif-family
+    font-size: rem(13)
+    position: absolute
+    top: 0px
+    text-transform: uppercase
+    letter-spacing: rem(0.3)
+    left: 20px
+    opacity: 0
+    transition: all 0.2s ease-in-out
+
+
+.drska-form__btn
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out
+    font-family: $sans-serif-family
+    font-size: rem(18)
+    border: none
+    background: $dark
+    color: #fff
+    padding: 16px 40px
+    max-width: rem(300)
+    text-transform: uppercase
+    letter-spacing: rem(0.3)
+
+    &:hover
+        background: white
+        color: $accent
+
+.drska-name
+    float: left
+    width: 49%
+
+.drska-mail
+    float: right
+    width: 49%
+
+.drska-message
+    +clearfix

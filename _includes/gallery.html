@@ -1,0 +1,15 @@
+<ul class="drska-gallery">
+  {% for image in page.images %}
+    <li>
+        <img src="{{ image.image_path }}" alt="{{ image.title}}"/>
+        <figcaption class="drska-gallery__caption">
+            <p class="drska-gallery__text">
+                {{ image.caption }}
+            </p>
+            <a href="#" class="drska-gallery__link">
+                {{ image.link }}
+            </a>
+        </figcaption>
+    </li>
+  {% endfor %}
+</ul>
