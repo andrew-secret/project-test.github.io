@@ -3,20 +3,29 @@
 // ######################################################
 
 .drska-footer
-    max-width: rem(1170)
     margin: 0 auto
-    padding: rem(100) 0
+    clear: both
+    position: fixed
+    bottom: rem(30)
+    width: 100vw
+    padding: 0 40px
+    box-sizing: border-box
     +clearfix
 
-    a
-        color: #B0B0B0
+    a:link
+        color: black
         font-family: $sans-serif-family
         text-decoration: none
+    
+    a:hover,
+    a:focus
+        color: lighten(black, 20%)
+
 
 .drska-footer__left
     float: left
 
-    +respond("large")
+    +respond(large)
         float: none
         text-align: center
         padding-bottom: rem(15)
@@ -24,6 +33,6 @@
 .drska-footer__right
     float: right
 
-    +respond("large")
+    +respond(large)
         float: none
         text-align: center

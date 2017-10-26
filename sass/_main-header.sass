@@ -28,7 +28,8 @@
 // ######################################################
 
 .drska-header
-    margin: 0 auto rem(150) auto
+    display: flex
+    align-items: center
     padding: rem(30) rem(70) 0 rem(30)
 
 .drska-header__image
@@ -36,20 +37,10 @@
     height: calc(100vh - 100px)
     max-height: 1090px
     position: relative
+    width: 60vw
 
     +respond("large")
         height: 80vh
-
-    &::after
-        bottom: rem(-30)
-        content: ""
-        height: 70%
-        position: absolute
-        right: rem(-30)
-        width: 70%
-        z-index: -1
-        background-image: linear-gradient(60deg,#2c3739 15%,#535d5f 100%)
-        height: 80%
 
 
 // ######################################################
@@ -58,35 +49,21 @@
 
 .drska-header__content
     box-sizing: border-box
-    left: 0
-    padding: 0 25% 60px 10%
-    position: absolute
-    top: 40%
-    width: 100%
     z-index: 2
     transform: translateY(0)
+    width: 40vw
 
-    +respond("large")
-        top: 25%
 
 .drska-header-headline
     max-width: rem(500)
     padding: rem(20) 0
 
-    &:after
-        background: $dark
-        content: ""
-        height: 1px
-        position: absolute
-        top: rem(180)
-        left: 0
-        width: rem(300)
-
-        +respond("large")
-            display: none
 
 .drska-header-subtext
+    border-top: 1px solid black
     max-width: rem(400)
+    margin-top: rem(50)
+    padding-top: rem(10)
 
 // ######################################################
 // Main-header – scroll-transition
