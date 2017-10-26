@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: gallery
 title: Art
 navigation_order: 2
@@ -23,4 +23,4 @@ images:
     title: Cheese Cake
     caption: You tell us what you want people to do, and we tell you how to get them to do it. We translate knowledge into meaningful action.
     link: View project
----
+--- -->
